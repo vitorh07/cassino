@@ -5,62 +5,61 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #e0e0e0; /* Cor de fundo do body */
-    color: #333; /* Cor do texto */
-    line-height: 1.6;
+    background-image: url('./assets/background.jpg');  /* Substitua com o caminho da sua imagem */
+    background-size: cover;                         /* Faz a imagem cobrir toda a tela */
+    background-position: center;                    /* Centraliza a imagem */
+    background-repeat: no-repeat;                   /* Impede que a imagem se repita */
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Altura total da viewport */
-    margin: 0; /* Remover margens padrão */
+    flex-direction: column;
+    height: 100vh;                                  /* Garante que o fundo cubra toda a altura da tela */
 }
 
 #container {
-    background-color: #f0f0f0; /* Cor de fundo do container */
-    padding: 20px; /* Espaçamento interno do container */
-    width: 50vw;
-    height: 75vh;
+    background-image: url('./assets/grid.png');
+    background-size: auto;                         /* Mantém o tamanho original da imagem */
+    background-position: center;                    /* Centraliza a imagem */
+    background-repeat: no-repeat;                   /* Impede que a imagem se repita */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 800px; /* Largura do container */
+    height: 800px; /* Altura do container */
 }
 
 .parent {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    gap: 4px; /* Reduzir o espaçamento entre as divs */
-    grid-auto-flow: dense; /* Preencher automaticamente o espaço disponível */
-    height: 100%;
-    width: 100%;
+    grid-template-columns: repeat(3, 128px);
+    grid-template-rows: repeat(3, 128px);
+    gap: 40px; /* Espaçamento entre as divs */
 }
 
 /* Estilização das divs individuais, se necessário */
 .parent > div {
-    background-color: #ffffff; /* Cor de fundo das divs */
-    border: 1px solid #ccc; /* Borda das divs */
     text-align: center; /* Centralizar o texto */
-    padding: 20px; /* Espaçamento interno das divs */
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 2em; /* Tamanho da fonte para melhor visualização */
+    overflow: hidden; /* Esconder o conteúdo que ultrapassa a div */
 }
 
-.div7 {
-    grid-column-start: 3;
-    grid-row-start: 3;
-}
-
-.div8 {
-    grid-column-start: 2;
-    grid-row-start: 3;
-}
-
-.div9 {
-    grid-column-start: 1;
-    grid-row-start: 3;
-}
-
-.parent img{
-    width: 128px;
+.parent img {
+    margin-top: 20px;
+    width: 120px;
+    height: 120px;
     object-fit: cover;
+}
+
+@keyframes spin {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-100%); }
+}
+
+#account{
+    display: flex;
+    justify-content: space-around;
+    width: 500px;
+    flex-direction: row;
 }
