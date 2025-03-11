@@ -1,7 +1,21 @@
 function atualizarSaldo() {
     const saldoElement = document.getElementById('saldo');
-    const saldoValue = saldoElement.getAttribute('value');
-    saldoElement.textContent = saldoValue;
+    const apostaElement = document.getElementById('aposta');
+
+    let saldoValue = parseInt(saldoElement.textContent);  // Pegando o valor do saldo correto
+    let apostaValue = parseInt(apostaElement.textContent); // Pegando o valor da aposta correto
+
+    saldoElement.textContent = saldoValue - apostaValue; // Atualiza o saldo corretamente
+}
+
+function verificarSaldo(){
+    const saldoElement = document.getElementById('saldo');
+    let saldoValue = parseInt(saldoElement.textContent);
+
+    if(saldoValue < 0){
+        saldoElement.textContent = 1000;
+        alert('Você não tem saldo suficiente para continuar jogando! Seu saldo foi resetado para 1000.');
+    }
 }
 
 function sortearNumeros() {
@@ -17,26 +31,44 @@ function sortearNumeros() {
 
     ids.forEach(id => {
         const imgElement = document.querySelector(`#${id} img`);
-        imgElement.style.animation = 'spin 1s linear infinite'; // Inicia a animação
+        imgElement.style.animation = 'spin 1s linear infinite';
 
         setTimeout(() => {
             const numero = Math.floor(Math.random() * 6) + 1;
             imgElement.src = imagens[numero];
             imgElement.alt = `Imagem ${numero}`;
-            imgElement.style.animation = ''; // Para a animação
-        }, 1000); // Duração da animação em milissegundos
+            imgElement.style.animation = '';
+        }, 500);
     });
 
-    // Atualiza o saldo após o sorteio
-    const saldoElement = document.getElementById('saldo');
-    let saldoValue = parseInt(saldoElement.getAttribute('value'));
-    saldoValue -= 100; // Exemplo de decremento do saldo
-    saldoElement.setAttribute('value', saldoValue);
-    saldoElement.textContent = saldoValue;
+    atualizarSaldo(); // Atualiza o saldo depois do sorteio
+    verificarSaldo(); // Verifica saldo
 }
 
-// Adiciona um evento de clique ao botão para sortear os números
-document.getElementById('sortearBtn').addEventListener('click', sortearNumeros);
+// Função para aumentar a aposta corretamente
+function aumentarAposta() {
+    const apostaElement = document.getElementById('aposta');
+    let apostaValue = parseInt(apostaElement.textContent);
 
-// Atualiza o saldo ao carregar a página
-document.addEventListener('DOMContentLoaded', atualizarSaldo);
+    if (apostaValue === 1) apostaValue = 5;
+    else if (apostaValue === 5) apostaValue = 10;
+    else if (apostaValue === 10) apostaValue = 100;
+    
+    apostaElement.textContent = apostaValue;
+}
+
+// Função para diminuir a aposta corretamente
+function diminuirAposta() {
+    const apostaElement = document.getElementById('aposta');
+    let apostaValue = parseInt(apostaElement.textContent);
+
+    if (apostaValue === 100) apostaValue = 10;
+    else if (apostaValue === 10) apostaValue = 5;
+    else if (apostaValue === 5) apostaValue = 1;
+    
+    apostaElement.textContent = apostaValue;
+}
+
+document.getElementById('sortearBtn').addEventListener('click', sortearNumeros);
+document.getElementById('aumentarBtn').addEventListener('click', aumentarAposta);
+document.getElementById('diminuirBtn').addEventListener('click', diminuirAposta);

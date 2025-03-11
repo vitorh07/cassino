@@ -5,22 +5,22 @@
 }
 
 body {
-    background-image: url('./assets/background.jpg');  /* Substitua com o caminho da sua imagem */
-    background-size: cover;                         /* Faz a imagem cobrir toda a tela */
-    background-position: center;                    /* Centraliza a imagem */
-    background-repeat: no-repeat;                   /* Impede que a imagem se repita */
+    background-image: url('./assets/background.jpg'); 
+    background-size: cover;                        
+    background-position: center;                 
+    background-repeat: no-repeat;                 
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: 100vh;                                  /* Garante que o fundo cubra toda a altura da tela */
-}
+    height: 100vh;       
+}                          
 
 #container {
     background-image: url('./assets/grid.png');
-    background-size: auto;                         /* Mantém o tamanho original da imagem */
-    background-position: center;                    /* Centraliza a imagem */
-    background-repeat: no-repeat;                   /* Impede que a imagem se repita */
+    background-size: auto;                         
+    background-position: center;                    
+    background-repeat: no-repeat;                  
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -54,12 +54,55 @@ body {
 
 @keyframes spin {
     0% { transform: translateY(0); }
-    100% { transform: translateY(-100%); }
+    100% { transform: translateY(-50%); }
 }
 
-#account{
+#account {
     display: flex;
     justify-content: space-around;
-    width: 500px;
+    align-items: center;
+    width: 600px;
     flex-direction: row;
+    background-color: #222;
+    border-radius: 10px;
+    height: 100px;
+    padding: 10px;
+}
+
+#account h2 {
+    margin: 0;
+}
+
+#btns {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#account button {
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 5px 0;
+}
+
+#account button:hover {
+    background-color: #555;
+    cursor: pointer;
+}
+
+.plusminus {
+    display: flex;
+    flex-direction: row;
+}
+
+.plusminus button {
+    width: 30px;
+    height: 30px;
+    margin: 0 5px;
+    padding: 0;
+    font-size: 20px;
+    line-height: 1;
 }
