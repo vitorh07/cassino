@@ -1,0 +1,66 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e0e0e0; /* Cor de fundo do body */
+    color: #333; /* Cor do texto */
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Altura total da viewport */
+    margin: 0; /* Remover margens padrão */
+}
+
+#container {
+    background-color: #f0f0f0; /* Cor de fundo do container */
+    padding: 20px; /* Espaçamento interno do container */
+    width: 50vw;
+    height: 75vh;
+}
+
+.parent {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 4px; /* Reduzir o espaçamento entre as divs */
+    grid-auto-flow: dense; /* Preencher automaticamente o espaço disponível */
+    height: 100%;
+    width: 100%;
+}
+
+/* Estilização das divs individuais, se necessário */
+.parent > div {
+    background-color: #ffffff; /* Cor de fundo das divs */
+    border: 1px solid #ccc; /* Borda das divs */
+    text-align: center; /* Centralizar o texto */
+    padding: 20px; /* Espaçamento interno das divs */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em; /* Tamanho da fonte para melhor visualização */
+}
+
+.div7 {
+    grid-column-start: 3;
+    grid-row-start: 3;
+}
+
+.div8 {
+    grid-column-start: 2;
+    grid-row-start: 3;
+}
+
+.div9 {
+    grid-column-start: 1;
+    grid-row-start: 3;
+}
+
+.parent img{
+    width: 128px;
+    object-fit: cover;
+}
