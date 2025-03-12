@@ -2,6 +2,8 @@
 
 Bem-vindo ao meu projeto de cassino com temática de Velho Oeste! Este repositório contém informações sobre o jogo de cassino desenvolvido em HTML, CSS e JavaScript.
 
+[**Acesse o site do cassino aqui!**](https://vitorh07.github.io/cassino/)
+
 ![Gif da página](./assets/cassino.gif)
 
 ## Índice
@@ -43,12 +45,12 @@ Este é um projeto de um jogo de cassino simples, desenvolvido em HTML, CSS e Ja
 
 1. Clone o repositório para o seu computador:
     ```bash
-    git clone https://github.com/seu-usuario/seu-repositorio.git
+    git clone https://github.com/vitorh07/cassino.git
     ```
 
 2. Navegue até o diretório do projeto:
     ```bash
-    cd seu-repositorio
+    cd cassino
     ```
 
 3. Abra o arquivo `index.html` em seu navegador preferido.
